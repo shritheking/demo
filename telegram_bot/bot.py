@@ -744,8 +744,11 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 context.user_data['awaiting_phone'] = True
                 return
             
-            await proceed_to_order_summary(update, context)
-            return
+            await query.edit_message_text(
+                f"📦 *{plan['name']}*\n\nPlease enter your **MT5 ID** to continue:",
+                parse_mode="Markdown"
+            )
+            context.user_data['awaiting_mt5_id'] = True
         else:
             # Multiple lifetime plans — show selection without price
             keyboard = []
@@ -800,11 +803,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             context.user_data['awaiting_phone'] = True
             return
             
-        # Phone already on file - check if EA or VPS
-        if p_type == "EA":
-            await proceed_to_order_summary(update, context)
-            return
-        
+        # Phone already on file - ask for MT5 ID next
         await query.edit_message_text("Please enter your **MT5 ID** to continue with the order:", parse_mode="Markdown")
         context.user_data["awaiting_mt5_id"] = True
         
@@ -864,13 +863,12 @@ async def proceed_to_order_summary(update: Update, context: ContextTypes.DEFAULT
     if not admin_username.startswith("@"):
         admin_username = f"@{admin_username}"
     
-    display_mt5 = f"`{mt5_id}`" if mt5_id else "*(Provided after approval)*"
     summary = (
         f"📋 *ORDER SUMMARY*\n\n"
         f"Order ID: #ORD-{order['id']}\n"
         f"👤 Name: {context.user_data.get('db_user_name', 'Unknown')}\n"
         f"📱 Phone: {context.user_data.get('db_user_phone', 'Unknown')}\n"
-        f"🖥 MT5 ID: {display_mt5}\n"
+        f"🖥 MT5 ID: `{mt5_id}`\n"
         f"📦 Plan: {product['name'] if product else 'Unknown'}\n\n"
         f"Status: ⏳ Pending Admin Approval\n\n"
         f"Please contact the admin to discuss and confirm your order.\n"
@@ -886,13 +884,12 @@ async def proceed_to_order_summary(update: Update, context: ContextTypes.DEFAULT
         
     admin_chat_id = os.getenv("ADMIN_CHAT_ID")
     if admin_chat_id:
-        display_mt5 = f"`{mt5_id}`" if mt5_id else "*(Provided after approval)*"
         admin_msg = (
             f"🆕 *NEW EA ORDER*\n\n"
             f"Order ID: ORD-{order['id']}\n"
             f"Customer Name: {context.user_data.get('db_user_name', 'Unknown')}\n"
             f"Phone: {context.user_data.get('db_user_phone', 'Unknown')}\n"
-            f"MT5 ID: {display_mt5}\n"
+            f"MT5 ID: `{mt5_id}`\n"
             f"Telegram ID: `{update.effective_user.id}`\n"
             f"Plan: {product['name'] if product else 'Unknown'}\n"
             f"Status: Pending Admin Approval"
@@ -1024,17 +1021,13 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update_user_phone(user_id, phone)
             context.user_data['db_user_phone'] = phone
             
-        # Check if they were in the middle of a purchase
+        # Check if they were in the middle of a purchase — now ask MT5 ID next
         if context.user_data.get('pending_product_id'):
-            p_type = context.user_data.get('pending_p_type')
-            if p_type == "EA":
-                await proceed_to_order_summary(update, context)
-            else:
-                await update.message.reply_text(
-                    "Please enter your **MT5 ID** to continue:",
-                    parse_mode="Markdown"
-                )
-                context.user_data['awaiting_mt5_id'] = True
+            await update.message.reply_text(
+                "Please enter your **MT5 ID** to continue:",
+                parse_mode="Markdown"
+            )
+            context.user_data['awaiting_mt5_id'] = True
             return
             
         welcome_text = (
