@@ -208,7 +208,7 @@ async def notify_admin_compile_failed(license_id: int, error_message: str):
 
 async def notify_telegram_bot(license_id: int):
     # Force the production URL, ignoring any potentially broken env vars on Render
-    bot_webhook_url = os.getenv("TELEGRAM_WEBHOOK_URL", "https://infinity-trader-compiler-tuj3.onrender.com/internal/delivery")
+    bot_webhook_url = os.getenv("TELEGRAM_WEBHOOK_URL", "https://infinity-trader-telegram-bot-k6h3.onrender.com/internal/delivery")
     try:
         import httpx
         async with httpx.AsyncClient(verify=HTTPX_VERIFY, timeout=15.0) as client:

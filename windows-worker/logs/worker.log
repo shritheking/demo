@@ -4900,3 +4900,77 @@
 . Sleeping 5s.
 2026-08-17 08:37:19,060 [WORKER] [WARNING] Unexpected API response 404: Not Found
 . Sleeping 5s.
+2026-08-17 08:37:25,680 [WORKER] [INFO] Starting
+2026-08-17 08:37:25,681 [WORKER] [INFO] Worker ID      : windows-worker-01
+2026-08-17 08:37:25,681 [WORKER] [INFO] API base URL   : https://infinity-trader-api-eq0o.onrender.com/api/v1
+2026-08-17 08:37:25,681 [WORKER] [INFO] Compiler dir   : C:\mt5-license-system\compiler
+2026-08-17 08:37:25,681 [WORKER] [INFO] MetaEditor     : C:\Program Files\MetaTrader 5\metaeditor64.exe
+2026-08-17 08:37:25,681 [WORKER] [INFO] Poll interval  : 5s
+2026-08-17 08:37:25,687 [WORKER] [INFO] compile_ea imported successfully
+2026-08-17 08:37:25,687 [WORKER] [INFO] deploy_ex5 imported successfully
+2026-08-17 08:37:25,687 [WORKER] [INFO] MetaEditor found: C:\Program Files\MetaTrader 5\metaeditor64.exe
+2026-08-17 08:37:25,688 Discovering MT5 data folder under: C:\Users\infinityadmin\AppData\Roaming\MetaQuotes\Terminal
+2026-08-17 08:37:25,693 Examined folders: ['Common', 'Community', 'D0E8209F77C8CF37AD8BF550E51FF075']
+2026-08-17 08:37:25,693 Valid MT5 instances found: 1
+2026-08-17 08:37:25,694 Selected MT5 instance: D0E8209F77C8CF37AD8BF550E51FF075  (score=55)
+2026-08-17 08:37:25,694 MT5 data folder  : C:\Users\infinityadmin\AppData\Roaming\MetaQuotes\Terminal\D0E8209F77C8CF37AD8BF550E51FF075
+2026-08-17 08:37:25,694 Experts folder   : C:\Users\infinityadmin\AppData\Roaming\MetaQuotes\Terminal\D0E8209F77C8CF37AD8BF550E51FF075\MQL5\Experts
+2026-08-17 08:37:25,694 origin.txt points to MT5 install: C:\Program Files\MetaTrader 5
+2026-08-17 08:37:25,694 [WORKER] [INFO] MT5 instance: D0E8209F77C8CF37AD8BF550E51FF075
+2026-08-17 08:37:25,694 [WORKER] [INFO] Experts folder: C:\Users\infinityadmin\AppData\Roaming\MetaQuotes\Terminal\D0E8209F77C8CF37AD8BF550E51FF075\MQL5\Experts
+2026-08-17 08:37:25,694 [WORKER] [INFO] All prerequisites verified
+2026-08-17 08:37:41,148 [WORKER] [WARNING] Initial API connectivity check failed (Render may be cold-starting): HTTPSConnectionPool(host='infinity-trader-api-eq0o.onrender.com', port=443): Read timed out. (read timeout=15)
+2026-08-17 08:38:01,490 [WORKER] [WARNING] Could not reach API to sync EA template: HTTPSConnectionPool(host='infinity-trader-api-eq0o.onrender.com', port=443): Read timed out. (read timeout=20). Using local copy.
+2026-08-17 08:38:01,491 [WORKER] [INFO] Polling for jobs
+2026-08-17 08:38:21,939 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:38:47,378 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:39:12,736 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:39:44,196 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:40:10,099 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:40:35,525 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:41:01,198 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:41:26,697 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:41:52,044 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:42:17,364 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:42:42,733 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:43:08,120 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:43:35,150 [WORKER] [WARNING] Request timed out while polling. Sleeping 5s.
+2026-08-17 08:51:57,855 [WORKER] [INFO] Job 97: expiry_date is None — treating as LIFETIME license
+2026-08-17 08:51:57,868 [WORKER] [INFO] Job claimed: 97
+2026-08-17 08:51:57,868 [WORKER] [INFO] MT5 ID: 67965555 | Expiry: lifetime | Plan: Infinity Trader EA - Lifetime
+2026-08-17 08:51:57,876 [WORKER] [INFO] Job 97: expiry_date is None/empty — treating as LIFETIME license
+2026-08-17 08:51:58,415 [WORKER] [WARNING] No active EA template configured in admin — using local copy.
+2026-08-17 08:51:58,416 [WORKER] [INFO] Compilation started
+2026-08-17 08:52:01,451 [WORKER] [INFO] Compilation successful
+2026-08-17 08:52:01,452 [WORKER] [INFO] EX5 generated: C:\mt5-license-system\compiler\output\InfinityTrader_67965555_lifetime.ex5 (15926 bytes)
+2026-08-17 08:52:01,452 [WORKER] [INFO] MT5 deployment started
+2026-08-17 08:52:01,452 ============================================================
+2026-08-17 08:52:01,452 Starting EX5 deployment
+2026-08-17 08:52:01,452 ============================================================
+2026-08-17 08:52:01,452 Source EX5       : C:\mt5-license-system\compiler\output\InfinityTrader_67965555_lifetime.ex5
+2026-08-17 08:52:01,452 Source size      : 15926 bytes
+2026-08-17 08:52:01,452 Discovering MT5 data folder...
+2026-08-17 08:52:01,453 Discovering MT5 data folder under: C:\Users\infinityadmin\AppData\Roaming\MetaQuotes\Terminal
+2026-08-17 08:52:01,460 Examined folders: ['Common', 'Community', 'D0E8209F77C8CF37AD8BF550E51FF075']
+2026-08-17 08:52:01,460 Valid MT5 instances found: 1
+2026-08-17 08:52:01,461 Selected MT5 instance: D0E8209F77C8CF37AD8BF550E51FF075  (score=55)
+2026-08-17 08:52:01,461 MT5 data folder  : C:\Users\infinityadmin\AppData\Roaming\MetaQuotes\Terminal\D0E8209F77C8CF37AD8BF550E51FF075
+2026-08-17 08:52:01,461 Experts folder   : C:\Users\infinityadmin\AppData\Roaming\MetaQuotes\Terminal\D0E8209F77C8CF37AD8BF550E51FF075\MQL5\Experts
+2026-08-17 08:52:01,461 origin.txt points to MT5 install: C:\Program Files\MetaTrader 5
+2026-08-17 08:52:01,463 Destination path : C:\Users\infinityadmin\AppData\Roaming\MetaQuotes\Terminal\D0E8209F77C8CF37AD8BF550E51FF075\MQL5\Experts\InfinityTrader_67965555_lifetime.ex5
+2026-08-17 08:52:01,463 Calculating source SHA-256...
+2026-08-17 08:52:01,466 Source SHA-256   : 8119b0e3fd1e420a6a35ec18934eb272c8d37fafe22fc057f43b755e5b781883
+2026-08-17 08:52:01,466 Copying EX5 with shutil.copy2()...
+2026-08-17 08:52:01,470 Destination size : 15926 bytes
+2026-08-17 08:52:01,470 File sizes match [OK]
+2026-08-17 08:52:01,470 Calculating destination SHA-256...
+2026-08-17 08:52:01,481 Destination SHA-256: 8119b0e3fd1e420a6a35ec18934eb272c8d37fafe22fc057f43b755e5b781883
+2026-08-17 08:52:01,481 SHA-256 hashes match [OK]
+2026-08-17 08:52:01,481 EX5 deployment completed
+2026-08-17 08:52:01,481 ============================================================
+2026-08-17 08:52:01,481 [WORKER] [INFO] MT5 deployment successful
+2026-08-17 08:52:01,481 [WORKER] [INFO] Deployed to: C:\Users\infinityadmin\AppData\Roaming\MetaQuotes\Terminal\D0E8209F77C8CF37AD8BF550E51FF075\MQL5\Experts\InfinityTrader_67965555_lifetime.ex5
+2026-08-17 08:52:01,481 [WORKER] [INFO] Size: 15926 bytes | SHA-256 match: True
+2026-08-17 08:52:01,481 [WORKER] [INFO] Upload started
+2026-08-17 08:52:06,762 [WORKER] [INFO] Upload successful
+2026-08-17 08:52:06,762 [WORKER] [SUCCESS] Job completed: 97
